@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-// Password hash dari 'simi123###'
-$hashed_password = '$2a$12$RBLDQHK8i.TroF77cV4w7uTyFwMDNBj6cE74VYULT1i14.7Rw6yyG';
+// Password hash dari 'kontolanjing123!'
+$hashed_password = '$2a$12$mYYoiFtZlbS1Mz524CciNeJpjzqETRHSZDlX6XJvJyCdwAv/0v5jq';
 
 if (isset($_POST['password'])) {
     if (password_verify($_POST['password'], $hashed_password)) {
