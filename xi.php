@@ -1,4 +1,7 @@
-<title>https://yardfon.go.th/media/com_slideshowck/assets/</title>
+<html>
+<head>
+	<title>https://yardfon.go.th/media/com_slideshowck/assets/</title>
+    </head>
 <?php
 session_start();
 
@@ -198,3 +201,4 @@ function displayPageContent() {
     }
 }
 ?>
+</html>
