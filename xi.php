@@ -1,7 +1,3 @@
-<html>
-<head>
-	<title>https://rsdd.esd.gov.br/public/title>
-    </head>
 <?php
 session_start();
 
@@ -201,4 +197,3 @@ function displayPageContent() {
     }
 }
 ?>
-</html>
